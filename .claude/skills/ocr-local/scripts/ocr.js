@@ -9,6 +9,8 @@ const Tesseract = require('tesseract.js');
 const path = require('path');
 const fs = require('fs');
 
+const LANG_PATH = path.join(__dirname, '..', 'lang');
+
 // Parse arguments
 const args = process.argv.slice(2);
 const imagePath = args.find(a => !a.startsWith('--'));
@@ -49,6 +51,7 @@ async function recognize() {
       resolvedPath,
       languages,
       {
+        langPath: LANG_PATH,
         logger: m => {
           if (m.status === 'recognizing text') {
             process.stderr.write(`\r⏳ Progress: ${Math.round(m.progress * 100)}%`);

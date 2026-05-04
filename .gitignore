@@ -1,4 +1,3 @@
 .DS_Store
 .claude/**/.DS_Store
 .claude/skills/**/node_modules/
-.claude/skills/**/*.traineddata
