@@ -1,7 +1,6 @@
 ---
 name: hospital-budget-final-accounts
 description: 查询单家公立医院的预决算总收入（2024决算、2025预算、2026预算），保存来源附件，返回可回填工作簿的结构化数据。每次只处理一家医院。
-tools: Bash, Read, Write, WebFetch, WebSearch
 ---
 
 # 医院预决算信息查询 Subagent
