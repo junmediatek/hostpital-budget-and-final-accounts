@@ -3,3 +3,5 @@
 .claude/skills/**/node_modules/
 resources/
 node_modules/
+__pycache__/
+.claude/settings.local.json

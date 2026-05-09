@@ -25,7 +25,7 @@ def get_soffice_env() -> dict:
     env = os.environ.copy()
     env["SAL_USE_VCLPLUGIN"] = "svp"
 
-    if _needs_shim():
+    if os.name != "nt" and _needs_shim():
         shim = _ensure_shim()
         env["LD_PRELOAD"] = str(shim)
 
@@ -46,7 +46,7 @@ def _needs_shim() -> bool:
         s = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         s.close()
         return False
-    except OSError:
+    except (OSError, AttributeError):
         return True
 
 
